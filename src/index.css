@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --light-blue: #1e213a;
+  --dark-blue: #100e1d;
+
+  --white: #e7e7eb;
+
+  --bg-gray: #6e707a;
+  --gray: #a09fb1;
+  --dark-gray: #88869d;
+  --farenheit-bg-gray: #585676;
+
+  --search-bg-blue: #3c47e9;
+
+  --yellow: #ffec65;
+}

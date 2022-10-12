@@ -1,0 +1,47 @@
+.Aside {
+  background-color: var(--light-blue);
+}
+
+.Aside div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.8rem 1.1rem;
+}
+
+.Aside div:nth-child(1) input {
+  background-color: var(--bg-gray);
+  color: var(--white);
+  text-align: center;
+  width: 16.1rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.878rem;
+}
+.Aside div:nth-child(1) input::placeholder {
+  color: inherit;
+}
+.Aside div:nth-child(1) .geo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--bg-gray);
+}
+
+.cloud-with-bg {
+  outline: 1px solid red;
+  /* background: url(../../assets/Cloud-background.png); */
+  background-size: 100%;
+  /* Using rhese margins to fit the pixels since the bg-img doesnt seem right */
+  margin-top: 7.6rem;
+  margin-bottom: 4rem;
+}
+.cloud-with-bg div {
+  outline: 1px solid red;
+  width: 15rem;
+  height: 17.4rem;
+  object-fit: contain;
+  margin: 0 auto;
+}
