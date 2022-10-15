@@ -11,12 +11,12 @@
 .Aside div:nth-child(1) input {
   background-color: var(--bg-gray);
   color: var(--white);
-  text-align: center;
   width: 16.1rem;
   border: none;
   outline: none;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 500;
+  padding-left: 2.1rem;
   font-size: 1.6rem;
   line-height: 1.878rem;
 }

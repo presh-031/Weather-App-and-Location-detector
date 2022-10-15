@@ -18,7 +18,6 @@ const Aside = () => {
       </div>
       <div>
         <p>
-          {" "}
           <span>15</span> <span>&deg;C</span>
         </p>
       </div>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Raleway:wght@100;500;600;700&display=swap");
+
 *,
 *::after,
 *::before {
@@ -23,4 +25,7 @@ html {
   --search-bg-blue: #3c47e9;
 
   --yellow: #ffec65;
+
+  --montserrat: "Montserrat", sans-serif;
+  --raleway: "Raleway", sans-serif;
 }
