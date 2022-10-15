@@ -16,7 +16,7 @@
   outline: none;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 500;
-  padding-left: 2.1rem;
+  padding-left: 1.8rem;
   font-size: 1.6rem;
   line-height: 1.878rem;
 }
@@ -44,4 +44,32 @@
   height: 17.4rem;
   object-fit: contain;
   margin: 0 auto;
+}
+.temperature {
+  color: #e7e7eb;
+  font-size: 14.4rem;
+  line-height: 16.906rem;
+}
+.temperature-unit {
+  color: #a09fb1;
+  font-weight: 500;
+  font-size: 4.8rem;
+  line-height: 5.635rem;
+}
+.temperature-unit span {
+  font-weight: 100;
+  font-size: 4.8rem;
+  line-height: 5.635rem;
+}
+.Aside div:nth-child(4) p {
+  font-weight: 600;
+  font-size: 3.6rem;
+  line-height: 4.226rem;
+  color: #a09fb1;
+}
+.Aside p:nth-of-type(1) {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+  color: #88869d;
 }

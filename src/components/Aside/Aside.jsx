@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./Aside.css";
-
 import shower from "../../assets/Shower.png";
+
+import "./Aside.css";
 
 const Aside = () => {
   return (
@@ -18,13 +18,17 @@ const Aside = () => {
       </div>
       <div>
         <p>
-          <span>15</span> <span>&deg;C</span>
+          <span className="temperature">15</span>{" "}
+          <span className="temperature-unit">
+            <span>&deg;</span>C
+          </span>
         </p>
       </div>
       <div>
         <p>Shower</p>
       </div>
       <p>Today &middot; Fri, 5 Jun</p>
+
       <p>Helsinki</p>
     </div>
   );
