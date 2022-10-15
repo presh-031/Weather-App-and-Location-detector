@@ -1,5 +1,6 @@
 .Aside {
   background-color: var(--light-blue);
+  text-align: center;
 }
 
 .Aside div:nth-child(1) {
@@ -45,6 +46,9 @@
   object-fit: contain;
   margin: 0 auto;
 }
+.temperature-div {
+  margin-bottom: 2.3rem;
+}
 .temperature {
   color: #e7e7eb;
   font-size: 14.4rem;
@@ -61,15 +65,36 @@
   font-size: 4.8rem;
   line-height: 5.635rem;
 }
-.Aside div:nth-child(4) p {
+.weather-condition-div {
+  margin-bottom: 4.8rem;
+}
+.weather-condition-div p {
   font-weight: 600;
   font-size: 3.6rem;
   line-height: 4.226rem;
   color: #a09fb1;
 }
-.Aside p:nth-of-type(1) {
+.date {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 2.1rem;
   color: #88869d;
+}
+.location-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.9rem;
+  color: #88869d;
+  margin-top: 3.3rem;
+  padding-bottom: 10.5rem;
+}
+.location-icon {
+  width: 1.4rem;
+  height: 1.9rem;
+}
+.location-div p {
+  line-height: 2.113rem;
+  font-weight: 600;
+  font-size: 1.8rem;
 }

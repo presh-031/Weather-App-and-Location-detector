@@ -1,5 +1,7 @@
 import React from "react";
 
+import { IconContext } from "react-icons";
+import { MdLocationOn } from "react-icons/md";
 import shower from "../../assets/Shower.png";
 
 import "./Aside.css";
@@ -16,7 +18,7 @@ const Aside = () => {
           <img src={shower} alt="" />
         </div>
       </div>
-      <div>
+      <div className="temperature-div">
         <p>
           <span className="temperature">15</span>{" "}
           <span className="temperature-unit">
@@ -24,12 +26,16 @@ const Aside = () => {
           </span>
         </p>
       </div>
-      <div>
+      <div className="weather-condition-div">
         <p>Shower</p>
       </div>
-      <p>Today &middot; Fri, 5 Jun</p>
-
-      <p>Helsinki</p>
+      <p className="date">Today &middot; Fri, 5 Jun</p>
+      <div className="location-div">
+        <IconContext.Provider value={{ color: "#88869D", className: "location-icon" }}>
+          <MdLocationOn />
+        </IconContext.Provider>
+        <p>Helsinki</p>
+      </div>
     </div>
   );
 };
