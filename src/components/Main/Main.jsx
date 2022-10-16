@@ -10,23 +10,25 @@ import "./Main.css";
 const Main = () => {
   return (
     <div className="main">
-      <section className="units-div">
+      <section className="units-section">
         <Units unit={"&deg;C"} />
         <Units unit={"&deg;F"} />
       </section>
-      <section className="forecasts-div">
+      <section className="forecasts-section">
         <Forecast date="Tomorrow" temp="16&deg;C" feels_like="11&deg;C" />
         <Forecast date="Sun, 7 Jun" temp="16&deg;C" feels_like="11&deg;C" />
         <Forecast date="Mon, 8 Jun" temp="16&deg;C" feels_like="11&deg;C" />
         <Forecast date="Tue, 9 Jun" temp="16&deg;C" feels_like="11&deg;C" />
         <Forecast date="Wed, 10 Jun" temp="16&deg;C" feels_like="11&deg;C" />
       </section>
-      <section>
+      <section className="highlights-section">
         <p>Today's Highlights</p>
-        <WindStatus />
-        <Humidity />
-        <Visibility />
-        <AirPressure />
+        <div>
+          <WindStatus />
+          <Humidity />
+          <Visibility />
+          <AirPressure />
+        </div>
       </section>
     </div>
   );

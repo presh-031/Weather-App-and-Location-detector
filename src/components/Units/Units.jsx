@@ -1,5 +1,5 @@
-const Units = () => {
-  return <div>&deg;C</div>;
+const Units = ({ unit }) => {
+  return <div>{unit}</div>;
 };
 
 export default Units;

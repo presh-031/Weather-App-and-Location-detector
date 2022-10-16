@@ -2,13 +2,22 @@
   background-color: #100e1d;
   color: #fff;
 }
-.units-div {
+.units-section {
   display: none;
 }
-.forecasts-div {
+.forecasts-section {
   /* outline: 1px solid red; */
   padding: 5.2rem 5.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem 2.6rem;
+}
+.highlights-section {
+  padding: 0 2.3rem;
+  outline: 1px solid red;
+}
+.highlights-section > p {
+  line-height: 2.818rem;
+  font-size: 2.4rem;
+  font-weight: 700;
 }
