@@ -9,7 +9,7 @@ const Humidity = () => {
       <p>
         <span className="humidity-value">84</span>%
       </p>
-      <ProgressBar bgcolor="#6a1b9a" completed="84" />
+      <ProgressBar bgcolor="#FFEC65" completed="84" />
     </div>
   );
 };
