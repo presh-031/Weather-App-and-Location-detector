@@ -2,7 +2,10 @@ import React from "react";
 
 import { IconContext } from "react-icons";
 import { MdLocationOn } from "react-icons/md";
+import { BiCurrentLocation } from "react-icons/bi";
+
 import shower from "../../assets/Shower.png";
+import cloudBg from "../../assets/Cloud-background.png";
 
 import "./Aside.css";
 
@@ -11,9 +14,14 @@ const Aside = () => {
     <div className="Aside">
       <div>
         <input type="text" placeholder="Search for places" />
-        <div className="geo"></div>
+        <div className="geo">
+          <IconContext.Provider value={{ className: "geo-icon" }}>
+            <BiCurrentLocation />
+          </IconContext.Provider>
+        </div>
       </div>
       <div className="cloud-with-bg">
+        <img className="bg-image" src={cloudBg} alt="" />
         <div>
           <img src={shower} alt="" />
         </div>
