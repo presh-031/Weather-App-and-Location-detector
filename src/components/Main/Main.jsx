@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Forecast from "../Forecast/Forecast";
 import Units from "../Units/Units";
 import WindStatus from "../WindStatus/WindStatus";
@@ -8,6 +8,22 @@ import AirPressure from "../AirPressure/AirPressure";
 
 import "./Main.css";
 const Main = () => {
+  function getLocation() {
+    const successCallback = (position) => {
+      const { latitude, longitude } = position.coords;
+      console.log(latitude, longitude);
+    };
+
+    const errorCallback = (error) => {
+      console.log(error);
+      // alert(error);
+    };
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  }
+  useEffect(() => {
+    getLocation();
+  }, []);
   return (
     <div className="main">
       <section className="units-section">
@@ -32,11 +48,11 @@ const Main = () => {
           <AirPressure />
         </div>
       </section>
-      <section className="footer">
+      <footer>
         <p>
-          created by <a href="https://github.com/presh-031">presh-031</a> - devChallenges
+          created by <a href="https://github.com/presh-031">presh-031</a> - devChallenges.io
         </p>
-      </section>
+      </footer>
     </div>
   );
 };

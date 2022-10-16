@@ -27,7 +27,21 @@
   grid-template-columns: 1fr;
   gap: 3.2rem 0;
 }
-.footer {
-  outline: 1px solid red;
+footer {
+  /* outline: 1px solid red; */
   margin-top: 9.6rem;
+  padding-bottom: 2.4rem;
+  display: grid;
+  place-items: center;
+}
+footer p {
+  color: #a09fb1;
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.707rem;
+}
+footer p a {
+  color: inherit;
+  font-weight: 700;
 }
