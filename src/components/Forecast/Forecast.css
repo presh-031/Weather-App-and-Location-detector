@@ -1,18 +1,39 @@
 .forecast {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   text-align: center;
   background-color: #1e213a;
+  width: 12rem;
 }
 .date {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.878rem;
+  margin-top: 1.8rem;
 }
 .forecast div {
-  outline: 1px solid red;
-  width: 6.6rem;
-  height: 6.2rem;
+  /* outline: 1px solid red; */
+  display: grid;
+  place-items: center;
 }
 .forecast div img {
-  /* object-fit: contain; */
+  width: 6.6rem;
+  height: 6.2rem;
+  object-fit: contain;
+  /* outline: 1px solid blue; */
+  margin-top: 1rem;
+  margin-bottom: 3.1rem;
+}
+.forecast p:nth-child(3) {
+  /* outline: 1px solid green; */
+  margin-top: 3.1rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.878rem;
+}
+.temp {
+  color: #e7e7eb;
+}
+.feels-like {
+  color: #a09fb1;
+  margin-left: 1.6rem;
 }

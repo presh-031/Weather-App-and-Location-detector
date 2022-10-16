@@ -6,7 +6,7 @@ const Forecast = ({ date, temp, feels_like }) => {
     <div className="forecast">
       <p className="date"> {date} </p>
       <div>
-        <img src={LightRain} alt="" />
+        <img src={LightRain} alt="weather condition overview" />
       </div>
       <p>
         <span className="temp">{temp}</span>
