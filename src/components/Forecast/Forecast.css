@@ -1,0 +1,18 @@
+.forecast {
+  outline: 1px solid red;
+  text-align: center;
+  background-color: #1e213a;
+}
+.date {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.878rem;
+}
+.forecast div {
+  outline: 1px solid red;
+  width: 6.6rem;
+  height: 6.2rem;
+}
+.forecast div img {
+  /* object-fit: contain; */
+}
