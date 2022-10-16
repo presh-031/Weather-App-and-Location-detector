@@ -36,6 +36,9 @@ const ProgressBar = (props) => {
       <div style={containerStyles}>
         <div style={fillerStyles}>{/* <span style={labelStyles}>{`${completed}%`}</span> */}</div>
       </div>
+      <div className="percentage-label">
+        <span>%</span>
+      </div>
     </div>
   );
 };
