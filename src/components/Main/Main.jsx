@@ -12,6 +12,7 @@ const Main = () => {
     const successCallback = (position) => {
       const { latitude, longitude } = position.coords;
       console.log(latitude, longitude);
+      getWeather(latitude, longitude);
     };
 
     const errorCallback = (error) => {
@@ -20,6 +21,12 @@ const Main = () => {
     };
 
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  }
+  function getWeather(latitude, longitude) {
+    try {
+    } catch (err) {
+      console.log(err);
+    }
   }
   useEffect(() => {
     getLocation();
