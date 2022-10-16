@@ -1,0 +1,24 @@
+.visibility {
+  text-align: center;
+  color: #e7e7eb;
+  background-color: #1e213a;
+  padding: 2.2rem 0 3.7rem 0;
+  /* outline: 1px solid red; */
+}
+.visibility p:nth-child(1) {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.878rem;
+  margin-bottom: 0.6rem;
+}
+.visibility p:nth-child(2) {
+  /* outline: 1px solid red; */
+  font-weight: 500;
+  font-size: 3.6rem;
+  line-height: 2.226rem;
+}
+.visibility-value {
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7.514rem;
+}

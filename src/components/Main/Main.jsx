@@ -14,6 +14,7 @@ const Main = () => {
         <Units unit={"&deg;C"} />
         <Units unit={"&deg;F"} />
       </section>
+
       <section className="forecasts-section">
         <Forecast date="Tomorrow" temp="16&deg;C" feels_like="11&deg;C" />
         <Forecast date="Sun, 7 Jun" temp="16&deg;C" feels_like="11&deg;C" />
@@ -21,6 +22,7 @@ const Main = () => {
         <Forecast date="Tue, 9 Jun" temp="16&deg;C" feels_like="11&deg;C" />
         <Forecast date="Wed, 10 Jun" temp="16&deg;C" feels_like="11&deg;C" />
       </section>
+
       <section className="highlights-section">
         <p>Today's Highlights</p>
         <div>
@@ -29,6 +31,11 @@ const Main = () => {
           <Visibility />
           <AirPressure />
         </div>
+      </section>
+      <section className="footer">
+        <p>
+          created by <a href="https://github.com/presh-031">presh-031</a> - devChallenges
+        </p>
       </section>
     </div>
   );

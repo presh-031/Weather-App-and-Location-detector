@@ -3,10 +3,10 @@ import React from "react";
 import "./Visibility.css";
 const Visibility = () => {
   return (
-    <div>
+    <div className="visibility">
       <p>Visibility</p>
       <p>
-        <span>6.4</span>
+        <span className="visibility-value">6.4</span>
         <span>miles</span>
       </p>
     </div>
