@@ -1,4 +1,29 @@
-.windstatus {
+.wind-status {
   outline: 1px solid red;
   text-align: center;
+  background-color: #1e213a;
+  color: #e7e7eb;
+  padding: 2.2rem 0 3.5rem 0;
+}
+.wind-status p:nth-child(1) {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.878rem;
+  margin-bottom: 0.6rem;
+}
+.wind-status p:nth-child(2) {
+  font-weight: 500;
+  line-height: 4.226rem;
+  font-size: 3.6rem;
+}
+.wind-status p:nth-child(2) span {
+  font-weight: 700;
+  line-height: 7.5rem;
+  font-size: 6.4rem;
+}
+.wind-status p:nth-child(3) {
+  font-weight: 500;
+  line-height: 1.644rem;
+  font-size: 1.4rem;
+  margin-top: 3.1rem;
 }

@@ -1,0 +1,22 @@
+.Humidity {
+  background-color: #1e213a;
+  color: #e7e7eb;
+  outline: 1px solid red;
+  text-align: center;
+}
+.Humidity p:nth-child(1) {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.878rem;
+  margin-bottom: 1.1rem;
+}
+.Humidity p:nth-child(2) {
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 4.226rem;
+}
+.humidity-value {
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7.514rem;
+}
