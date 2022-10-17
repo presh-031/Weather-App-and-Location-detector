@@ -11,8 +11,11 @@ import Loading from "../Loading/Loading";
 
 import "./Aside.css";
 
-const Aside = (todayData) => {
+const Aside = ({ todayData }) => {
   console.log(todayData);
+
+  const temp = Math.round(todayData.main.temp);
+  const description = todayData.weather[0].main;
   return (
     <div className="Aside">
       {todayData ? (
@@ -33,14 +36,14 @@ const Aside = (todayData) => {
           </div>
           <div className="temperature-div">
             <p>
-              <span className="temperature">15</span>{" "}
+              <span className="temperature"> {temp} </span>{" "}
               <span className="temperature-unit">
                 <span>&deg;</span>C
               </span>
             </p>
           </div>
           <div className="weather-condition-div">
-            <p>Shower</p>
+            <p>{description}</p>
           </div>
           <p className="date">Today &middot; Fri, 5 Jun</p>
           <div className="location-div">
@@ -51,7 +54,7 @@ const Aside = (todayData) => {
           </div>
         </>
       ) : (
-        { Loading }
+        <Loading type={"bubbles"} color={"#ffffff"} />
       )}
     </div>
   );

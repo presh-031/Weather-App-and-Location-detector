@@ -1,6 +1,7 @@
 .main {
   background-color: #100e1d;
   color: #fff;
+  height: 158.1rem;
 }
 .units-section {
   display: none;
@@ -28,8 +29,9 @@
   gap: 3.2rem 0;
 }
 footer {
+  background-color: #100e1d;
   /* outline: 1px solid red; */
-  margin-top: 9.6rem;
+  padding-top: 9.6rem;
   padding-bottom: 2.4rem;
   display: grid;
   place-items: center;

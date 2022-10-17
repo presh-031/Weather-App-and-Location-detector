@@ -11,7 +11,6 @@ const App = () => {
   function getLocation() {
     const success = (position) => {
       const { latitude, longitude } = position.coords;
-      // console.log(latitude, longitude);
       getWeather(latitude, longitude);
     };
 
@@ -33,17 +32,19 @@ const App = () => {
       const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_key}&units=metric`;
 
       const res = await axios.get(url);
-      const data = res.data.list;
-      const todayData = data[0];
-      console.log(todayData);
+      const data = await res.data.list;
+
+      console.log(res.data);
+
+      setTodayData(data[0]);
     } catch (err) {
       console.log(err);
     }
   }
   return (
     <div className="App">
-      {/* <Aside todayData={todayData} /> */}
-      {/* <Main todayData={todayData} /> */}
+      <Aside todayData={todayData} />
+      <Main todayData={todayData} />
     </div>
   );
 };

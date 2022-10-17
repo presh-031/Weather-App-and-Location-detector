@@ -1,6 +1,7 @@
 .Aside {
   background-color: var(--light-blue);
   text-align: center;
+  height: 81rem;
 }
 
 .Aside div:nth-child(1) {
