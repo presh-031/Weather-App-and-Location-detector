@@ -27,7 +27,7 @@ const Aside = ({ todayData, city }) => {
   return (
     <div className="Aside">
       {showSearchArea ? (
-        <Search showSearchArea={showSearchArea} setShowSearchArea={setShowSearchArea} />
+        <Search showSearchArea={showSearchArea} setShowSearchArea={setShowSearchArea} city={city} />
       ) : todayData ? (
         <>
           <div>
