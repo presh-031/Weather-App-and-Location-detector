@@ -7,6 +7,8 @@ import { BiCurrentLocation } from "react-icons/bi";
 import shower from "../../assets/Shower.png";
 import cloudBg from "../../assets/Cloud-background.png";
 
+import Loading from "../Loading/Loading";
+
 import "./Aside.css";
 
 const Aside = () => {

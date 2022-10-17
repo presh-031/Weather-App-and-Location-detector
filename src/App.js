@@ -44,8 +44,8 @@ const App = () => {
   }
   return (
     <div className="App">
-      <Aside />
-      <Main />
+      <Aside todayData={todayData} />
+      <Main todayData={todayData} />
     </div>
   );
 };
