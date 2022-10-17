@@ -45,7 +45,7 @@ const App = () => {
 
   async function getCity(lat, lon) {
     try {
-      // Using reverse geo-location api
+      // Using reverse geo-location api to get the same city with the lat and long info.
       const API_key_2 = "6658b5987a716f929da6227307c0bafd";
       const url_2 = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_key_2}`;
 
@@ -58,6 +58,7 @@ const App = () => {
       console.log(`Error ${err}`);
     }
   }
+
   return (
     <div className="App">
       <Aside todayData={todayData} city={city} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { IconContext } from "react-icons";
 import { MdLocationOn } from "react-icons/md";
@@ -7,11 +7,14 @@ import { BiCurrentLocation } from "react-icons/bi";
 import shower from "../../assets/Shower.png";
 import cloudBg from "../../assets/Cloud-background.png";
 
+import Search from "../Search/Search";
 import Loading from "../Loading/Loading";
 
 import "./Aside.css";
 
 const Aside = ({ todayData, city }) => {
+  const [showSearchArea, setShowSearchArea] = useState(false);
+
   console.log(todayData);
 
   const date = new Date().toLocaleDateString("en-us", {
@@ -23,10 +26,18 @@ const Aside = ({ todayData, city }) => {
 
   return (
     <div className="Aside">
-      {todayData ? (
+      {showSearchArea ? (
+        <Search showSearchArea={showSearchArea} setShowSearchArea={setShowSearchArea} />
+      ) : todayData ? (
         <>
           <div>
-            <input type="text" placeholder="Search for places" />
+            <input
+              type="text"
+              placeholder="Search for places"
+              onClick={() => {
+                setShowSearchArea(true);
+              }}
+            />
             <div className="geo">
               <IconContext.Provider value={{ className: "geo-icon" }}>
                 <BiCurrentLocation />
