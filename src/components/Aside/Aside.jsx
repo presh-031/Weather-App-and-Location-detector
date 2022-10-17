@@ -11,11 +11,16 @@ import Loading from "../Loading/Loading";
 
 import "./Aside.css";
 
-const Aside = ({ todayData }) => {
+const Aside = ({ todayData, city }) => {
   console.log(todayData);
 
-  const temp = Math.round(todayData.main.temp);
-  const description = todayData.weather[0].main;
+  const date = new Date().toLocaleDateString("en-us", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+  });
+  console.log(date);
+
   return (
     <div className="Aside">
       {todayData ? (
@@ -36,21 +41,21 @@ const Aside = ({ todayData }) => {
           </div>
           <div className="temperature-div">
             <p>
-              <span className="temperature"> {temp} </span>{" "}
+              <span className="temperature"> {Math.round(todayData.main.temp)} </span>{" "}
               <span className="temperature-unit">
                 <span>&deg;</span>C
               </span>
             </p>
           </div>
           <div className="weather-condition-div">
-            <p>{description}</p>
+            <p>{todayData.weather[0].main}</p>
           </div>
-          <p className="date">Today &middot; Fri, 5 Jun</p>
+          <p className="date">Today &middot; {date}</p>
           <div className="location-div">
             <IconContext.Provider value={{ color: "#88869D", className: "location-icon" }}>
               <MdLocationOn />
             </IconContext.Provider>
-            <p>Helsinki</p>
+            <p>{city}</p>
           </div>
         </>
       ) : (
