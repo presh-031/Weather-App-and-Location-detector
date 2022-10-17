@@ -26,26 +26,24 @@ const App = () => {
     getLocation();
   }, []);
 
-  function getWeather(lat, lon) {
-    // console.log(lat, lon);
-    const API_key = "e416be1f249467ff1237c0b4e24aedd7";
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_key}&units=metric`;
+  async function getWeather(lat, lon) {
+    console.log(lat, lon);
+    try {
+      const API_key = "e416be1f249467ff1237c0b4e24aedd7";
+      const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_key}&units=metric`;
 
-    axios
-      .get(url)
-      .then((res) => {
-        const data = res.data.list;
-        setTodayData(data[0]);
-        console.log(todayData);
-      })
-      .catch((err) => {
-        console.log(`Error ${err}`);
-      });
+      const res = await axios.get(url);
+      const data = res.data.list;
+      const todayData = data[0];
+      console.log(todayData);
+    } catch (err) {
+      console.log(err);
+    }
   }
   return (
     <div className="App">
-      <Aside todayData={todayData} />
-      <Main todayData={todayData} />
+      {/* <Aside todayData={todayData} /> */}
+      {/* <Main todayData={todayData} /> */}
     </div>
   );
 };
