@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Forecast from "../Forecast/Forecast";
 import Units from "../Units/Units";
 import WindStatus from "../WindStatus/WindStatus";
@@ -8,29 +8,6 @@ import AirPressure from "../AirPressure/AirPressure";
 
 import "./Main.css";
 const Main = () => {
-  function getLocation() {
-    const successCallback = (position) => {
-      const { latitude, longitude } = position.coords;
-      console.log(latitude, longitude);
-      getWeather(latitude, longitude);
-    };
-
-    const errorCallback = (error) => {
-      console.log(error);
-      // alert(error);
-    };
-
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-  }
-  function getWeather(latitude, longitude) {
-    try {
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  useEffect(() => {
-    getLocation();
-  }, []);
   return (
     <div className="main">
       <section className="units-section">
