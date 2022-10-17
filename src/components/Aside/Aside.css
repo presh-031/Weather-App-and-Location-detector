@@ -4,13 +4,13 @@
   height: 81rem;
 }
 
-.Aside div:nth-child(1) {
+.Aside > div:nth-child(1) {
   display: flex;
   justify-content: space-between;
   padding: 1.8rem 1.1rem;
 }
 
-.Aside div:nth-child(1) input {
+.Aside > div:nth-child(1) input {
   background-color: var(--bg-gray);
   color: var(--white);
   width: 16.1rem;
@@ -22,10 +22,10 @@
   font-size: 1.6rem;
   line-height: 1.878rem;
 }
-.Aside div:nth-child(1) input::placeholder {
+.Aside > div:nth-child(1) input::placeholder {
   color: inherit;
 }
-.Aside div:nth-child(1) .geo {
+.Aside > div:nth-child(1) .geo {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
