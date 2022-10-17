@@ -9,21 +9,26 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
   // Default search history
   const [searchHistory, setSearchHistory] = useState([
     {
-      id: 0,
+      id: 1,
       searchTerm: city,
     },
   ]);
 
-  function handleSearch(e) {
-    e.preventDefault();
-
-    setSearchHistory((prevSearchHistory) => [...prevSearchHistory, { id: 2, searchTerm: value }]);
-    console.log(searchHistory);
-  }
-
   function handleChange(e) {
     setValue(e.target.value);
   }
+
+  function handleSearch(e) {
+    e.preventDefault();
+
+    setSearchHistory((prevSearchHistory) => [
+      ...prevSearchHistory,
+      { id: prevSearchHistory[prevSearchHistory.length - 1].id + 1, searchTerm: value },
+    ]);
+
+    console.log(searchHistory);
+  }
+
   return (
     <>
       <section className="close-btn-section">
@@ -42,7 +47,16 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
         </div>
         <button>Search</button>
       </form>
-      <section className="search-history-section"></section>
+      <section className="search-history-section">
+        {searchHistory.map((history) => {
+          return (
+            <div key={history.id}>
+              <p>{history.searchTerm}</p>
+              <p>Arrow</p>
+            </div>
+          );
+        })}
+      </section>
     </>
   );
 };
