@@ -50,12 +50,14 @@ button {
   line-height: 1.878rem;
   padding: 1.4rem 1.9rem;
 }
-.search-history-section {
+.search-history-section,
+.suggestions-section {
   /* outline: 1px solid red; */
   color: #e7e7eb;
   margin: 0 1.2rem;
 }
-.search-history-section div {
+.search-history-section div,
+.suggestions-section div {
   /* outline: 1px solid blue; */
   cursor: pointer;
   display: flex;
@@ -63,19 +65,24 @@ button {
   padding: 2.3rem 1.2rem;
   justify-content: space-between;
 }
-.search-history-section div:hover {
+.search-history-section div:hover,
+.suggestions-section div:hover {
   outline: 1px solid #616475;
 }
-.search-history-section div:hover p {
+.search-history-section div:hover p,
+.suggestions-section div:hover,
+p {
   transform: scale(1.15);
 }
-.search-history-section div p {
+.search-history-section div p,
+.suggestions-section div p {
   transition: transform 0.15s;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.88rem;
 }
-.search-history-section div .arrow {
+.search-history-section div .arrow,
+.suggestions-section div .arrow {
   color: #616475;
   width: 1.66rem;
   height: 2rem;

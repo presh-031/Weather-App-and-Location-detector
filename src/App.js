@@ -60,11 +60,14 @@ const App = () => {
       console.log(`Error ${err}`);
     }
   }
-  function childToApp(lat, lon) {
+  function childToApp(lat, lon, name, state, country) {
     console.log(`${lat}, ${lon} in app`);
     //  call getWeather with the lat and lon to get the weather info.
-    // getSearchedCityInfo(value);
-    // set city to be equal to this value
+
+    getWeather(lat, lon);
+
+    // The new city should show the exact same city from the suggestion.
+    setCity(`${name}, ${state}, ${country}`);
   }
 
   return (

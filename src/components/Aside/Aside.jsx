@@ -24,9 +24,9 @@ const Aside = ({ childToApp, todayData, city }) => {
   });
   console.log(date);
 
-  function childToParent(lat, lon) {
+  function childToParent(lat, lon, name, state, country) {
     console.log(lat, lon);
-    childToApp(lat, lon);
+    childToApp(lat, lon, name, state, country);
   }
 
   return (

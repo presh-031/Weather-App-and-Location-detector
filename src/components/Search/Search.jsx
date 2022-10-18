@@ -65,10 +65,10 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
     }
   }
 
-  // Function to handle search suggestion click
-  function handleSuggestionClick(suggestion) {
-    // Should  automatically send lat and lon to app to search.
-  }
+  // // Function to handle search suggestion click
+  // function handleSuggestionClick(suggestion) {
+  //   // Should  automatically send lat and lon to app to search.
+  // }
 
   return (
     <>
@@ -90,6 +90,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
         <button>Search</button>
       </form>
 
+      {/* Search history section */}
       {suggestions === null && (
         <section className="search-history-section">
           {searchHistory.map((history) => {
@@ -117,9 +118,8 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
               <div
                 onClick={() => {
                   // Clicking should auto search with its respective lat and lon
-                  // handleSuggestionClick(history.searchTerm);
 
-                  childToParent(lat, lon);
+                  childToParent(lat, lon, name, state, country);
                 }}
               >
                 <p>{`${name}, ${state}, ${country}`}</p>
