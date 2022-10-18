@@ -8,7 +8,9 @@ import "./App.css";
 const App = () => {
   const [todayData, setTodayData] = useState(null);
   const [city, setCity] = useState("");
+  const [futureData, setFutureData] = useState(null);
 
+  const [date, setDate] = useState("");
   const [data, setData] = useState("");
   function getLocation() {
     const success = (position) => {
@@ -39,6 +41,9 @@ const App = () => {
       const data = await res.data.list;
 
       setTodayData(data[0]);
+
+      // Relatively random picks, really, and total 5 to fit the design by generating exactly 5 components.
+      setFutureData([data[8], data[14], data[20], data[29], data[35]]);
     } catch (err) {
       console.log(err);
     }
@@ -53,7 +58,7 @@ const App = () => {
       const res_2 = await axios.get(url_2);
       const locationData = await res_2.data[0].name;
 
-      console.warn(locationData);
+      // console.warn(locationData);
       setCity(locationData);
     } catch (err) {
       console.log(`Error ${err}`);
@@ -72,12 +77,12 @@ const App = () => {
   // Getting data about geoClicked from Aside
   function getGeoClick(geoClicked) {
     geoClicked && getLocation();
-    console.log(geoClicked);
+    // console.log(geoClicked);
   }
   return (
     <div className="App">
-      <Aside getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
-      <Main todayData={todayData} />
+      <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
+      <Main todayData={todayData} futureData={futureData} />
     </div>
   );
 };

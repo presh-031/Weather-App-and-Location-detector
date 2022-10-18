@@ -10,8 +10,9 @@ import Visibility from "../Visibility/Visibility";
 import AirPressure from "../AirPressure/AirPressure";
 
 import "./Main.css";
-const Main = ({ todayData }) => {
+const Main = ({ todayData, futureData }) => {
   console.log(todayData);
+  console.log(futureData);
 
   return (
     <div className="main">
@@ -23,11 +24,18 @@ const Main = ({ todayData }) => {
           </section>
 
           <section className="forecasts-section">
-            <Forecast date="Tomorrow" temp="16&deg;C" feels_like="11&deg;C" />
+            {futureData.map((day) => {
+              const { dt_txt, main } = day;
+              const date = new Date(`${dt_txt}`).toDateString().split(" ");
+
+              // Should be max and min-temps.
+              return <Forecast date={date} maxTemp="16&deg;C" minTemp="11&deg;C" />;
+            })}
+            {/* <Forecast date="Tomorrow" temp="16&deg;C" feels_like="11&deg;C" />
             <Forecast date="Sun, 7 Jun" temp="16&deg;C" feels_like="11&deg;C" />
             <Forecast date="Mon, 8 Jun" temp="16&deg;C" feels_like="11&deg;C" />
             <Forecast date="Tue, 9 Jun" temp="16&deg;C" feels_like="11&deg;C" />
-            <Forecast date="Wed, 10 Jun" temp="16&deg;C" feels_like="11&deg;C" />
+            <Forecast date="Wed, 10 Jun" temp="16&deg;C" feels_like="11&deg;C" /> */}
           </section>
 
           <section className="highlights-section">
