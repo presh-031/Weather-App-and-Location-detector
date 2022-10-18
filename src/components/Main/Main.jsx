@@ -26,10 +26,11 @@ const Main = ({ todayData, futureData }) => {
           <section className="forecasts-section">
             {futureData.map((day) => {
               const { dt_txt, main } = day;
-              const date = new Date(`${dt_txt}`).toDateString().split(" ");
-
+              const date = new Date(`${dt_txt}`).toDateString();
+              const maxTemp = Math.round(main.temp_max);
+              const minTemp = Math.round(main.temp_min);
               // Should be max and min-temps.
-              return <Forecast date={date} maxTemp="16&deg;C" minTemp="11&deg;C" />;
+              return <Forecast date={date} maxTemp={maxTemp} minTemp={minTemp} />;
             })}
             {/* <Forecast date="Tomorrow" temp="16&deg;C" feels_like="11&deg;C" />
             <Forecast date="Sun, 7 Jun" temp="16&deg;C" feels_like="11&deg;C" />
