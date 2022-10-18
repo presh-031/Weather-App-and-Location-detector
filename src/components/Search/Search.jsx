@@ -118,7 +118,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
               <div
                 onClick={() => {
                   // Clicking should auto search with its respective lat and lon
-
+                  setShowSearchArea(false);
                   childToParent(lat, lon, name, state, country);
                 }}
               >

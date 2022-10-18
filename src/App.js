@@ -10,7 +10,6 @@ const App = () => {
   const [city, setCity] = useState("");
 
   const [data, setData] = useState("");
-
   function getLocation() {
     const success = (position) => {
       const { latitude, longitude } = position.coords;
@@ -70,9 +69,14 @@ const App = () => {
     setCity(`${name}, ${state}, ${country}`);
   }
 
+  // Getting data about geoClicked from Aside
+  function getGeoClick(geoClicked) {
+    geoClicked && getLocation();
+    console.log(geoClicked);
+  }
   return (
     <div className="App">
-      <Aside childToApp={childToApp} todayData={todayData} city={city} />
+      <Aside getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
       <Main todayData={todayData} />
     </div>
   );

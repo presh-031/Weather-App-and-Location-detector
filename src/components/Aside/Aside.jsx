@@ -12,10 +12,12 @@ import Loading from "../Loading/Loading";
 
 import "./Aside.css";
 
-const Aside = ({ childToApp, todayData, city }) => {
+const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
   const [showSearchArea, setShowSearchArea] = useState(false);
   // const [data, setData] = useState("");
   console.log(todayData);
+
+  const [geoClicked, setGeoClicked] = useState(true);
 
   const date = new Date().toLocaleDateString("en-us", {
     weekday: "short",
@@ -48,7 +50,12 @@ const Aside = ({ childToApp, todayData, city }) => {
                 setShowSearchArea(true);
               }}
             />
-            <div className="geo">
+            <div
+              className="geo"
+              onClick={() => {
+                getGeoClick(geoClicked);
+              }}
+            >
               <IconContext.Provider value={{ className: "geo-icon" }}>
                 <BiCurrentLocation />
               </IconContext.Provider>
