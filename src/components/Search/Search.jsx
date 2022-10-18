@@ -21,7 +21,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   ]);
 
   // Suggestions data initially is an empty array
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState(null);
 
   function handleChange(e) {
     setValue(e.target.value);
@@ -65,6 +65,11 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
     }
   }
 
+  // Function to handle search suggestion click
+  function handleSuggestionClick(suggestion) {
+    // Should  automatically send lat and lon to app to search.
+  }
+
   return (
     <>
       <section className="close-btn-section">
@@ -91,34 +96,43 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
         </button>
       </form>
 
-      <section className="search-history-section">
-        {searchHistory.map((history) => {
-          return (
-            <div
-              key={history.id}
-              onClick={() => {
-                handleHistoryClick(history.searchTerm);
-              }}
-            >
-              <p>{history.searchTerm}</p>
-              <IoIosArrowForward className="arrow" />
-            </div>
-          );
-        })}
-      </section>
+      {suggestions === null && (
+        <section className="search-history-section">
+          {searchHistory.map((history) => {
+            return (
+              <div
+                key={history.id}
+                onClick={() => {
+                  handleHistoryClick(history.searchTerm);
+                }}
+              >
+                <p>{history.searchTerm}</p>
+                <IoIosArrowForward className="arrow" />
+              </div>
+            );
+          })}
+        </section>
+      )}
 
       {/* Suggestions */}
-      <section className="suggestions-section">
-        {suggestions.map((suggestion) => {
-          const { name, state, country } = suggestion;
-          return (
-            <div>
-              <p>{`${name}, ${state}, ${country}`}</p>
-              <IoIosArrowForward className="arrow" />
-            </div>
-          );
-        })}
-      </section>
+      {suggestions && (
+        <section className="suggestions-section">
+          {suggestions.map((suggestion) => {
+            const { name, state, country, lat, lon } = suggestion;
+            return (
+              <div
+                onClick={() => {
+                  // Clicking should auto search with its respective lat and lon
+                  // handleSuggestionClick(history.searchTerm);
+                }}
+              >
+                <p>{`${name}, ${state}, ${country}`}</p>
+                <IoIosArrowForward className="arrow" />
+              </div>
+            );
+          })}
+        </section>
+      )}
     </>
   );
 };
