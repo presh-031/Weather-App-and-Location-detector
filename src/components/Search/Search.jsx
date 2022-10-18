@@ -87,13 +87,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
           <ImSearch className="search-icon" color="#616475" />
           <input type="text" onChange={handleChange} value={value} placeholder="search location" />
         </div>
-        <button
-          onClick={() => {
-            childToParent(value);
-          }}
-        >
-          Search
-        </button>
+        <button>Search</button>
       </form>
 
       {suggestions === null && (
@@ -124,6 +118,8 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
                 onClick={() => {
                   // Clicking should auto search with its respective lat and lon
                   // handleSuggestionClick(history.searchTerm);
+
+                  childToParent(lat, lon);
                 }}
               >
                 <p>{`${name}, ${state}, ${country}`}</p>
