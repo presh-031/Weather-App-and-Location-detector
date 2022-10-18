@@ -4,7 +4,7 @@ import { ImSearch } from "react-icons/im";
 import { IoIosArrowForward } from "react-icons/io";
 
 import "./Search.css";
-const Search = ({ showSearchArea, setShowSearchArea, city }) => {
+const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   const [value, setValue] = useState("");
   // Should store search history in local storage.
   // Should be validating input
@@ -31,14 +31,9 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
       { id: prevSearchHistory[prevSearchHistory.length - 1].id + 1, searchTerm: value },
     ]);
 
-    getDataOfSearchedCity();
     // setShowSearchArea(false);
 
     console.log(searchHistory);
-  }
-
-  function getDataOfSearchedCity() {
-    console.warn(value);
   }
 
   function handleHistoryClick(searchTerm) {
@@ -63,7 +58,13 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
           <ImSearch className="search-icon" color="#616475" />
           <input type="text" onChange={handleChange} value={value} placeholder="search location" />
         </div>
-        <button onClick={() => {}}>Search</button>
+        <button
+          onClick={() => {
+            childToParent(value);
+          }}
+        >
+          Search
+        </button>
       </form>
 
       <section className="search-history-section">

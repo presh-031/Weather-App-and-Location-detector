@@ -9,6 +9,8 @@ const App = () => {
   const [todayData, setTodayData] = useState(null);
   const [city, setCity] = useState("");
 
+  const [data, setData] = useState("");
+
   function getLocation() {
     const success = (position) => {
       const { latitude, longitude } = position.coords;
@@ -58,10 +60,15 @@ const App = () => {
       console.log(`Error ${err}`);
     }
   }
+  function childToApp(value) {
+    console.log(`${value} in app`);
+    // Convert this value to lat and lon  with geolocation, then call getWeather with the lat and lon to get the weather info.
+    // set city to be equal to this value
+  }
 
   return (
     <div className="App">
-      <Aside todayData={todayData} city={city} />
+      <Aside childToApp={childToApp} todayData={todayData} city={city} />
       <Main todayData={todayData} />
     </div>
   );

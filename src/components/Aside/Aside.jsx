@@ -12,9 +12,9 @@ import Loading from "../Loading/Loading";
 
 import "./Aside.css";
 
-const Aside = ({ todayData, city }) => {
+const Aside = ({ childToApp, todayData, city }) => {
   const [showSearchArea, setShowSearchArea] = useState(false);
-  const [search, setSearch] = useState("");
+  // const [data, setData] = useState("");
   console.log(todayData);
 
   const date = new Date().toLocaleDateString("en-us", {
@@ -24,10 +24,20 @@ const Aside = ({ todayData, city }) => {
   });
   console.log(date);
 
+  function childToParent(value) {
+    console.log(value);
+    childToApp(value);
+  }
+
   return (
     <div className="Aside">
       {showSearchArea ? (
-        <Search showSearchArea={showSearchArea} setShowSearchArea={setShowSearchArea} city={city} />
+        <Search
+          childToParent={childToParent}
+          showSearchArea={showSearchArea}
+          setShowSearchArea={setShowSearchArea}
+          city={city}
+        />
       ) : todayData ? (
         <>
           <div>
