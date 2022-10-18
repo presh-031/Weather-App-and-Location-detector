@@ -14,7 +14,7 @@ import "./Aside.css";
 
 const Aside = ({ todayData, city }) => {
   const [showSearchArea, setShowSearchArea] = useState(false);
-
+  const [search, setSearch] = useState("");
   console.log(todayData);
 
   const date = new Date().toLocaleDateString("en-us", {

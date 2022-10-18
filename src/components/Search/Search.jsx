@@ -31,7 +31,14 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
       { id: prevSearchHistory[prevSearchHistory.length - 1].id + 1, searchTerm: value },
     ]);
 
+    getDataOfSearchedCity();
+    // setShowSearchArea(false);
+
     console.log(searchHistory);
+  }
+
+  function getDataOfSearchedCity() {
+    console.warn(value);
   }
 
   function handleHistoryClick(searchTerm) {
@@ -56,7 +63,7 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
           <ImSearch className="search-icon" color="#616475" />
           <input type="text" onChange={handleChange} value={value} placeholder="search location" />
         </div>
-        <button>Search</button>
+        <button onClick={() => {}}>Search</button>
       </form>
 
       <section className="search-history-section">
