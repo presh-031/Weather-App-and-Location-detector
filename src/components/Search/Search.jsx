@@ -34,8 +34,9 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
     console.log(searchHistory);
   }
 
-  function handleHistoryClick(e) {
-    console.log(e.value);
+  function handleHistoryClick(searchTerm) {
+    setValue(searchTerm);
+    // Should also automatically search
   }
 
   return (
@@ -64,7 +65,7 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
             <div
               key={history.id}
               onClick={() => {
-                handleHistoryClick();
+                handleHistoryClick(history.searchTerm);
               }}
             >
               <p>{history.searchTerm}</p>
