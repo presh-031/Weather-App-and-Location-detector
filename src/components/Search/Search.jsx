@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { CgClose } from "react-icons/cg";
 import { ImSearch } from "react-icons/im";
 import { IoIosArrowForward } from "react-icons/io";
@@ -9,7 +9,7 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
   // Should store search history in local storage.
   // Should be validating input
 
-  // Default search history
+  // Default search history is user's current city.
   const [searchHistory, setSearchHistory] = useState([
     {
       id: 1,
@@ -34,6 +34,10 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
     console.log(searchHistory);
   }
 
+  function handleHistoryClick(e) {
+    console.log(e.value);
+  }
+
   return (
     <>
       <section className="close-btn-section">
@@ -45,6 +49,7 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
           }}
         />
       </section>
+
       <form onSubmit={handleSearch}>
         <div>
           <ImSearch className="search-icon" color="#616475" />
@@ -52,10 +57,16 @@ const Search = ({ showSearchArea, setShowSearchArea, city }) => {
         </div>
         <button>Search</button>
       </form>
+
       <section className="search-history-section">
         {searchHistory.map((history) => {
           return (
-            <div key={history.id}>
+            <div
+              key={history.id}
+              onClick={() => {
+                handleHistoryClick();
+              }}
+            >
               <p>{history.searchTerm}</p>
               <IoIosArrowForward className="arrow" />
             </div>
