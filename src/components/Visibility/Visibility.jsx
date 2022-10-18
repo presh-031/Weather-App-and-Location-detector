@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Visibility.css";
-const Visibility = () => {
+const Visibility = ({ visibility }) => {
   return (
     <div className="visibility">
       <p>Visibility</p>
