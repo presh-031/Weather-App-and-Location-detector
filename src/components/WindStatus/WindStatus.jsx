@@ -1,13 +1,18 @@
 import React from "react";
 
 import "./WindStatus.css";
-const WindStatus = () => {
+const WindStatus = ({ windStatus }) => {
+  // console.warn(windStatus);
+  const { deg, speed } = windStatus;
+
+  const speedInMph = Math.round(speed * 2.237);
   return (
     <div className="wind-status">
       <p>Wind status</p>
       <p>
-        <span>7</span> mph
+        <span> {speedInMph} </span> mph
       </p>
+      {/* Should use deg to make a pointer */}
       <p>wsw</p>
     </div>
   );

@@ -11,6 +11,8 @@ import AirPressure from "../AirPressure/AirPressure";
 
 import "./Main.css";
 const Main = ({ todayData }) => {
+  console.log(todayData);
+
   return (
     <div className="main">
       {todayData ? (
@@ -31,10 +33,10 @@ const Main = ({ todayData }) => {
           <section className="highlights-section">
             <p>Today's Highlights</p>
             <div>
-              <WindStatus />
-              <Humidity />
-              <Visibility />
-              <AirPressure />
+              <WindStatus windStatus={todayData.wind} />
+              <Humidity humidity={todayData.main.humidity} />
+              <Visibility visibility={todayData.visibility} />
+              <AirPressure airPressure={todayData.main.pressure} />
             </div>
           </section>
         </>
