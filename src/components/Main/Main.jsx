@@ -29,14 +29,9 @@ const Main = ({ todayData, futureData }) => {
               const date = new Date(`${dt_txt}`).toDateString();
               const maxTemp = Math.round(main.temp_max);
               const minTemp = Math.round(main.temp_min);
-              // Should be max and min-temps.
+
               return <Forecast date={date} maxTemp={maxTemp} minTemp={minTemp} />;
             })}
-            {/* <Forecast date="Tomorrow" temp="16&deg;C" feels_like="11&deg;C" />
-            <Forecast date="Sun, 7 Jun" temp="16&deg;C" feels_like="11&deg;C" />
-            <Forecast date="Mon, 8 Jun" temp="16&deg;C" feels_like="11&deg;C" />
-            <Forecast date="Tue, 9 Jun" temp="16&deg;C" feels_like="11&deg;C" />
-            <Forecast date="Wed, 10 Jun" temp="16&deg;C" feels_like="11&deg;C" /> */}
           </section>
 
           <section className="highlights-section">
