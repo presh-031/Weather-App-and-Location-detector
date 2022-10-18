@@ -45,9 +45,9 @@ const App = () => {
     }
   }
 
+  // Using reverse geo-location api to get the same city with the lat and long info.
   async function getCity(lat, lon) {
     try {
-      // Using reverse geo-location api to get the same city with the lat and long info.
       const API_key_2 = "6658b5987a716f929da6227307c0bafd";
       const url_2 = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_key_2}`;
 
@@ -63,8 +63,25 @@ const App = () => {
   function childToApp(value) {
     console.log(`${value} in app`);
     // Convert this value to lat and lon  with geolocation, then call getWeather with the lat and lon to get the weather info.
+    // getSearchedCityInfo(value);
     // set city to be equal to this value
   }
+
+  // Function to get lat&lon info of searched city and call getWeather
+  // Using geolocation api
+  // async function getSearchedCityInfo(value) {
+  //   try {
+  //     const API_key = "6658b5987a716f929da6227307c0bafd";
+  //     const url = `http://api.openweathermap.org/geo/1.0/direct?q=${value.toLowerCase()}&limit=5&appid=${API_key}`;
+
+  //     const res = await axios.get(url);
+  //     const data = await res.data;
+
+  //     console.log(data);
+  //   } catch (err) {
+  //     console.log(`Error ${err}`);
+  //   }
+  // }
 
   return (
     <div className="App">

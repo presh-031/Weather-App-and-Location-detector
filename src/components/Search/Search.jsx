@@ -1,4 +1,7 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
+
+import axios from "axios";
+
 import { CgClose } from "react-icons/cg";
 import { ImSearch } from "react-icons/im";
 import { IoIosArrowForward } from "react-icons/io";
@@ -17,6 +20,9 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
     },
   ]);
 
+  // Suggestions data initially is an empty array
+  const [suggestions, setSuggestions] = useState([]);
+
   function handleChange(e) {
     setValue(e.target.value);
   }
@@ -31,6 +37,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
       { id: prevSearchHistory[prevSearchHistory.length - 1].id + 1, searchTerm: value },
     ]);
 
+    getCitiesSuggestions();
     // setShowSearchArea(false);
 
     console.log(searchHistory);
@@ -39,6 +46,23 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   function handleHistoryClick(searchTerm) {
     setValue(searchTerm);
     // Should also automatically search
+  }
+
+  // Function to get 5 cities suggestions from API
+  async function getCitiesSuggestions() {
+    try {
+      const API_key = "6658b5987a716f929da6227307c0bafd";
+      const url = `http://api.openweathermap.org/geo/1.0/direct?q=${value.toLowerCase()}&limit=5&appid=${API_key}`;
+
+      const res = await axios.get(url);
+      const suggestionsData = await res.data;
+
+      console.log(suggestionsData);
+
+      setSuggestions(suggestionsData);
+    } catch (err) {
+      console.log(`Error ${err}`);
+    }
   }
 
   return (
@@ -77,6 +101,19 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
               }}
             >
               <p>{history.searchTerm}</p>
+              <IoIosArrowForward className="arrow" />
+            </div>
+          );
+        })}
+      </section>
+
+      {/* Suggestions */}
+      <section className="suggestions-section">
+        {suggestions.map((suggestion) => {
+          const { name, state, country } = suggestion;
+          return (
+            <div>
+              <p>{`${name}, ${state}, ${country}`}</p>
               <IoIosArrowForward className="arrow" />
             </div>
           );
