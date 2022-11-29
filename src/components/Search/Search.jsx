@@ -10,12 +10,9 @@ import "./Search.css";
 import Loading from "../Loading/Loading";
 const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   const [value, setValue] = useState("");
-  // Should be validating input
-
-  // Suggestions data initially is an empty array
   const [suggestions, setSuggestions] = useState(null);
-
   const [loading, setLoading] = useState(false);
+
   function handleChange(e) {
     setValue(e.target.value);
   }
@@ -85,7 +82,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
           })}
         </section>
       )}
-      {loading && <Loading />}
+      {loading && <Loading type={"bubbles"} color={"#ffffff"} />}
     </>
   );
 };
