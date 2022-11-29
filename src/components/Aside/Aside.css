@@ -1,7 +1,7 @@
 .Aside {
   background-color: var(--light-blue);
   text-align: center;
-  height: 81rem;
+  /* height: 81rem; */
 }
 
 .Aside > div:nth-child(1) {
@@ -27,6 +27,8 @@
 }
 .Aside > div:nth-child(1) .geo {
   width: 4rem;
+  max-width: 4rem;
+  outline: 2px solid red;
   height: 4rem;
   border-radius: 50%;
   display: grid;
@@ -42,7 +44,7 @@
 }
 
 .cloud-with-bg {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
   /* background: url(../../assets/Cloud-background.png); */
 
   background-size: 100%;
@@ -64,7 +66,7 @@
   /* outline: 1px solid red; */
 }
 .cloud-with-bg div img {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
   width: 15rem;
   height: 17.4rem;
   object-fit: contain;

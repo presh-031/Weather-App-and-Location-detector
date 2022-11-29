@@ -35,8 +35,8 @@ const Main = ({ todayData, futureData }) => {
           </section>
 
           <section className="highlights-section">
-            <p>Today's Highlights</p>
-            <div>
+            {/* <p>Today's Highlights</p> */}
+            <div className="highlights-container">
               <WindStatus windStatus={todayData.wind} />
               <Humidity humidity={todayData.main.humidity} />
               <Visibility visibility={todayData.visibility} />

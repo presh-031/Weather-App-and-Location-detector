@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Aside from "./components/Aside/Aside";
 import Main from "./components/Main/Main";
 
-import "./App.css";
 const App = () => {
   const [todayData, setTodayData] = useState(null);
   const [city, setCity] = useState("");
@@ -81,10 +80,11 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
-      <Main todayData={todayData} futureData={futureData} />
-    </div>
+    // <div className="App">
+    <p>Testing text</p>
+    // {/* <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} /> */}
+    // {/* <Main todayData={todayData} futureData={futureData} /> */}
+    // </div>
   );
 };
 

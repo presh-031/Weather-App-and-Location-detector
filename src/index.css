@@ -7,9 +7,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-}
 
 :root {
   --light-blue: #1e213a;
@@ -28,4 +25,9 @@ html {
 
   --montserrat: "Montserrat", sans-serif;
   --raleway: "Raleway", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--raleway);
 }

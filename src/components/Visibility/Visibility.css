@@ -3,7 +3,7 @@
   color: #e7e7eb;
   background-color: #1e213a;
   padding: 2.2rem 0 3.7rem 0;
-  /* outline: 1px solid red; */
+  border: 1px solid red;
 }
 .visibility p:nth-child(1) {
   font-weight: 500;
