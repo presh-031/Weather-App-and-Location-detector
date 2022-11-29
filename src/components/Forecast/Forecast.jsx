@@ -8,7 +8,7 @@ const Forecast = ({ date, maxTemp, minTemp, description }) => {
       <div>
         <img src={weatherIcon(description)} alt="weather condition" />
       </div>
-      <p>
+      <p className="temps">
         <span className="temp">{maxTemp}&deg;C</span>
         <span className="feels-like">{minTemp}&deg;C</span>
       </p>
