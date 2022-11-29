@@ -4,7 +4,6 @@ import { IconContext } from "react-icons";
 import { MdLocationOn } from "react-icons/md";
 import { BiCurrentLocation } from "react-icons/bi";
 
-import shower from "../../assets/Shower.png";
 import cloudBg from "../../assets/Cloud-background.png";
 
 import Search from "../Search/Search";
@@ -16,21 +15,11 @@ import "./Aside.css";
 
 const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
   const [showSearchArea, setShowSearchArea] = useState(false);
-  // const [data, setData] = useState("");
-  // console.log(todayData);
-  // console.log(todayData.weather[0].description);
   const [geoClicked, setGeoClicked] = useState(true);
 
-  // const date = new Date().toLocaleDateString("en-us", {
-  //   weekday: "short",
-  //   day: "numeric",
-  //   month: "short",
-  // });
-  // console.log(todayData?.weather[0].description);
   const date = todayData ? new Date(`${todayData.dt_txt}`).toDateString().split(" ") : [];
 
   function childToParent(lat, lon, name, state, country) {
-    // console.log(lat, lon);
     childToApp(lat, lon, name, state, country);
   }
 

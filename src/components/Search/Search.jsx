@@ -65,11 +65,6 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
     }
   }
 
-  // // Function to handle search suggestion click
-  // function handleSuggestionClick(suggestion) {
-  //   // Should  automatically send lat and lon to app to search.
-  // }
-
   return (
     <>
       <section className="close-btn-section">

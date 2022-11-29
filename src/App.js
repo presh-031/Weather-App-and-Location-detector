@@ -80,11 +80,10 @@ const App = () => {
   }
 
   return (
-    // <div className="App">
-    <p>Testing text</p>
-    // {/* <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} /> */}
-    // {/* <Main todayData={todayData} futureData={futureData} /> */}
-    // </div>
+    <div>
+      <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
+      <Main todayData={todayData} futureData={futureData} />
+    </div>
   );
 };
 
