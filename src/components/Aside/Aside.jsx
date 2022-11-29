@@ -10,23 +10,27 @@ import cloudBg from "../../assets/Cloud-background.png";
 import Search from "../Search/Search";
 import Loading from "../Loading/Loading";
 
+import weatherIcon from "../services/weatherIcon";
+
 import "./Aside.css";
 
 const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
   const [showSearchArea, setShowSearchArea] = useState(false);
   // const [data, setData] = useState("");
-  console.log(todayData);
-
+  // console.log(todayData);
+  // console.log(todayData.weather[0].description);
   const [geoClicked, setGeoClicked] = useState(true);
 
-  const date = new Date().toLocaleDateString("en-us", {
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-  });
+  // const date = new Date().toLocaleDateString("en-us", {
+  //   weekday: "short",
+  //   day: "numeric",
+  //   month: "short",
+  // });
+  console.log(todayData?.weather[0].description);
+  const date = todayData ? new Date(`${todayData.dt_txt}`).toDateString().split(" ") : [];
 
   function childToParent(lat, lon, name, state, country) {
-    console.log(lat, lon);
+    // console.log(lat, lon);
     childToApp(lat, lon, name, state, country);
   }
 
@@ -63,7 +67,7 @@ const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
           <div className="cloud-with-bg">
             <img className="bg-image" src={cloudBg} alt="" />
             <div>
-              <img src={shower} alt="" />
+              <img src={weatherIcon(todayData.weather[0].description)} alt="weather description" />
             </div>
           </div>
           <div className="temperature-div">
@@ -77,7 +81,9 @@ const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
           <div className="weather-condition-div">
             <p>{todayData.weather[0].main}</p>
           </div>
-          <p className="date">Today &middot; {date}</p>
+          <p className="date">
+            Today &middot; {date[0]}, {date[1]} {date[2]}
+          </p>
           <div className="location-div">
             <IconContext.Provider value={{ color: "#88869D", className: "location-icon" }}>
               <MdLocationOn />

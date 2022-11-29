@@ -57,7 +57,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
       const res = await axios.get(url);
       const suggestionsData = await res.data;
 
-      console.log(suggestionsData);
+      // console.log(suggestionsData);
 
       setSuggestions(suggestionsData);
     } catch (err) {

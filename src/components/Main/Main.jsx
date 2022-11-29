@@ -11,8 +11,8 @@ import AirPressure from "../AirPressure/AirPressure";
 
 import "./Main.css";
 const Main = ({ todayData, futureData }) => {
-  console.log(todayData);
-  console.log(futureData);
+  // console.log(todayData);
+  // console.log(futureData);
 
   return (
     <div className="main">

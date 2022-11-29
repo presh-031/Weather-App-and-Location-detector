@@ -12,6 +12,7 @@ const App = () => {
 
   const [date, setDate] = useState("");
   const [data, setData] = useState("");
+
   function getLocation() {
     const success = (position) => {
       const { latitude, longitude } = position.coords;
@@ -21,6 +22,9 @@ const App = () => {
 
     const error = (error) => {
       console.log(error);
+      // if (error.GeolocationPositionError.code === 2) {
+      //   alert("Network error");
+      // }
     };
 
     navigator.geolocation.getCurrentPosition(success, error);
@@ -28,7 +32,6 @@ const App = () => {
 
   useEffect(() => {
     getLocation();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function getWeather(lat, lon) {
@@ -43,7 +46,7 @@ const App = () => {
       setTodayData(data[0]);
 
       // Relatively random picks, really, and total 5 to fit the design by generating exactly 5 components.
-      setFutureData([data[8], data[14], data[20], data[29], data[35]]);
+      setFutureData([data[8], data[16], data[22], data[29], data[35]]);
     } catch (err) {
       console.log(err);
     }
@@ -58,15 +61,13 @@ const App = () => {
       const res_2 = await axios.get(url_2);
       const locationData = await res_2.data[0].name;
 
-      // console.warn(locationData);
       setCity(locationData);
     } catch (err) {
       console.log(`Error ${err}`);
     }
   }
   function childToApp(lat, lon, name, state, country) {
-    console.log(`${lat}, ${lon} in app`);
-    //  call getWeather with the lat and lon to get the weather info.
+    // console.log(`${lat}, ${lon} in app`);
 
     getWeather(lat, lon);
 
@@ -77,8 +78,8 @@ const App = () => {
   // Getting data about geoClicked from Aside
   function getGeoClick(geoClicked) {
     geoClicked && getLocation();
-    // console.log(geoClicked);
   }
+
   return (
     <div className="App">
       <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
