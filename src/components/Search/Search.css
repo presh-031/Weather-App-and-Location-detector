@@ -69,14 +69,8 @@ button {
 .suggestions-section div:hover {
   outline: 1px solid #616475;
 }
-.search-history-section div:hover p,
-.suggestions-section div:hover,
-p {
-  transform: scale(1.15);
-}
 .search-history-section div p,
 .suggestions-section div p {
-  transition: transform 0.15s;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.88rem;

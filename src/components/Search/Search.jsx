@@ -9,16 +9,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import "./Search.css";
 const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   const [value, setValue] = useState("");
-  // Should store search history in local storage.
   // Should be validating input
-
-  // Default search history is user's current city.
-  const [searchHistory, setSearchHistory] = useState([
-    {
-      id: 1,
-      searchTerm: city,
-    },
-  ]);
 
   // Suggestions data initially is an empty array
   const [suggestions, setSuggestions] = useState(null);
@@ -30,17 +21,9 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   function handleSearch(e) {
     e.preventDefault();
 
-    setSearchHistory((prevSearchHistory) => [
-      ...prevSearchHistory,
-
-      // Generating ids manually for the list-keys
-      { id: prevSearchHistory[prevSearchHistory.length - 1].id + 1, searchTerm: value },
-    ]);
-
-    getCitiesSuggestions();
-    // setShowSearchArea(false);
-
-    console.log(searchHistory);
+    if (value) {
+      getCitiesSuggestions();
+    }
   }
 
   function handleHistoryClick(searchTerm) {
@@ -84,25 +67,6 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
         </div>
         <button>Search</button>
       </form>
-
-      {/* Search history section */}
-      {suggestions === null && (
-        <section className="search-history-section">
-          {searchHistory.map((history) => {
-            return (
-              <div
-                key={history.id}
-                onClick={() => {
-                  handleHistoryClick(history.searchTerm);
-                }}
-              >
-                <p>{history.searchTerm}</p>
-                <IoIosArrowForward className="arrow" />
-              </div>
-            );
-          })}
-        </section>
-      )}
 
       {/* Suggestions */}
       {suggestions && (

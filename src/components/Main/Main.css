@@ -17,10 +17,8 @@
   /* gap: 3.2rem 0; */
 }
 .highlights-section {
-  padding: 0 3rem;
-  /* border: 2px solid red; */
+  padding: 0 2.8rem;
   margin: 0;
-  max-width: 100%;
 }
 .today-text {
   /* line-height: 2.818rem; */
@@ -28,7 +26,7 @@
   font-weight: 700;
   margin-bottom: 3.2rem;
   overflow: auto;
-  /* border: 1px solid green; */
+  border: 1px solid green;
 }
 .highlights-container {
   display: grid;
