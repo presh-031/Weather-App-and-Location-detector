@@ -23,7 +23,7 @@ const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
     childToApp(lat, lon, name, state, country);
   }
 
-  console.log(city);
+  // console.log(city);
   return (
     <div className="Aside">
       {showSearchArea ? (

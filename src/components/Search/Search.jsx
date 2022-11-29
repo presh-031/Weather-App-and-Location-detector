@@ -30,7 +30,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   async function getCitiesSuggestions() {
     try {
       const API_key = "6658b5987a716f929da6227307c0bafd";
-      const url = `http://api.openweathermap.org/geo/1.0/direct?q=${value.toLowerCase()}&limit=5&appid=${API_key}`;
+      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${value.toLowerCase()}&limit=5&appid=${API_key}`;
 
       const res = await axios.get(url);
       const suggestionsData = await res.data;
@@ -67,8 +67,10 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
         <section className="suggestions-section">
           {suggestions.map((suggestion) => {
             const { name, state, country, lat, lon } = suggestion;
+            // console.log(suggestion);
             return (
               <div
+                key={lat}
                 onClick={() => {
                   // Clicking should auto search with its respective lat and lon
                   childToParent(lat, lon, name, state, country);
