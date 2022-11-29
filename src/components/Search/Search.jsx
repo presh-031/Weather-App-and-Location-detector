@@ -7,6 +7,7 @@ import { ImSearch } from "react-icons/im";
 import { IoIosArrowForward } from "react-icons/io";
 
 import "./Search.css";
+import Loading from "../Loading/Loading";
 const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   const [value, setValue] = useState("");
   // Should be validating input
@@ -14,6 +15,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
   // Suggestions data initially is an empty array
   const [suggestions, setSuggestions] = useState(null);
 
+  const [loading, setLoading] = useState(false);
   function handleChange(e) {
     setValue(e.target.value);
   }
@@ -23,12 +25,8 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
 
     if (value) {
       getCitiesSuggestions();
+      setLoading(true);
     }
-  }
-
-  function handleHistoryClick(searchTerm) {
-    setValue(searchTerm);
-    // Should also automatically search
   }
 
   // Function to get 5 cities suggestions from API
@@ -40,8 +38,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
       const res = await axios.get(url);
       const suggestionsData = await res.data;
 
-      // console.log(suggestionsData);
-
+      setLoading(false);
       setSuggestions(suggestionsData);
     } catch (err) {
       console.log(`Error ${err}`);
@@ -77,8 +74,8 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
               <div
                 onClick={() => {
                   // Clicking should auto search with its respective lat and lon
-                  setShowSearchArea(false);
                   childToParent(lat, lon, name, state, country);
+                  setShowSearchArea(false);
                 }}
               >
                 <p>{`${name}, ${state}, ${country}`}</p>
@@ -88,6 +85,7 @@ const Search = ({ childToParent, showSearchArea, setShowSearchArea, city }) => {
           })}
         </section>
       )}
+      {loading && <Loading />}
     </>
   );
 };
