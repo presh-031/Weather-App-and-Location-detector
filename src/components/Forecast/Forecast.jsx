@@ -1,12 +1,12 @@
-import LightRain from "../../assets/LightRain.png";
+import weatherIcon from "../services/weatherIcon";
 
 import "./Forecast.css";
-const Forecast = ({ date, maxTemp, minTemp }) => {
+const Forecast = ({ date, maxTemp, minTemp, description }) => {
   return (
     <div className="forecast">
       <p className="date"> {date} </p>
       <div>
-        <img src={LightRain} alt="weather condition overview" />
+        <img src={weatherIcon(description)} alt="weather condition" />
       </div>
       <p>
         <span className="temp">{maxTemp}&deg;C</span>

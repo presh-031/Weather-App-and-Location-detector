@@ -26,7 +26,7 @@ const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
   //   day: "numeric",
   //   month: "short",
   // });
-  console.log(todayData?.weather[0].description);
+  // console.log(todayData?.weather[0].description);
   const date = todayData ? new Date(`${todayData.dt_txt}`).toDateString().split(" ") : [];
 
   function childToParent(lat, lon, name, state, country) {

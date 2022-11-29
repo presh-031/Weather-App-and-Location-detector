@@ -11,9 +11,6 @@ import AirPressure from "../AirPressure/AirPressure";
 
 import "./Main.css";
 const Main = ({ todayData, futureData }) => {
-  // console.log(todayData);
-  // console.log(futureData);
-
   return (
     <div className="main">
       {todayData ? (
@@ -29,8 +26,11 @@ const Main = ({ todayData, futureData }) => {
               const date = new Date(`${dt_txt}`).toDateString();
               const maxTemp = Math.round(main.temp_max);
               const minTemp = Math.round(main.temp_min);
+              const description = day?.weather[0].description;
 
-              return <Forecast date={date} maxTemp={maxTemp} minTemp={minTemp} />;
+              return (
+                <Forecast key={day.dt} date={date} maxTemp={maxTemp} minTemp={minTemp} description={description} />
+              );
             })}
           </section>
 

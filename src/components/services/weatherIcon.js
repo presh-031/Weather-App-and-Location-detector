@@ -4,7 +4,12 @@ import brokenClouds from "../../assets/HeavyCloud.png";
 import lightRain from "../../assets/LightRain.png";
 import rain from "../../assets/Shower.png";
 import thunderstorm from "../../assets/Thunderstorm.png";
+import snow from "../../assets/Snow.png";
+import mist from "../../assets/Sleet.png";
 
+// still working on getting the right icons depending on the weathr description returned from api
+// scattered clouds
+//
 const weatherIcon = (weather) => {
   switch (weather) {
     case "clear sky":
@@ -22,11 +27,11 @@ const weatherIcon = (weather) => {
     case "thunderstorm":
       return thunderstorm;
     case "snow":
-      return "../../assets/Snow.png";
+      return snow;
     case "mist":
-      return "../../assets/Sleet.png";
+      return mist;
     default:
-      return "../../assets/Clear.png";
+      return clearSky;
   }
 };
 
