@@ -61,12 +61,10 @@ const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
             </div>
           </div>
           <div className="temperature-div">
-            <p>
-              <span className="temperature"> {Math.round(todayData.main.temp)} </span>{" "}
-              <span className="temperature-unit">
-                <span>&deg;</span>C
-              </span>
-            </p>
+            <span className="temperature"> {Math.round(todayData.main.temp)} </span>{" "}
+            <span className="temperature-unit">
+              <span>&deg;</span>C
+            </span>
           </div>
           <div className="weather-condition-div">
             <p>{todayData.weather[0].main}</p>

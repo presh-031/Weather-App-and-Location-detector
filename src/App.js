@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Aside from "./components/Aside/Aside";
 import Main from "./components/Main/Main";
 
+import "./App.css";
 const App = () => {
   const [todayData, setTodayData] = useState(null);
   const [city, setCity] = useState("");
@@ -30,7 +31,10 @@ const App = () => {
   }
 
   useEffect(() => {
+    // If theres an error in getting location,
+    // it should use a default location.
     getLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function getWeather(lat, lon) {
@@ -80,7 +84,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="App">
       <Aside date={date} getGeoClick={getGeoClick} childToApp={childToApp} todayData={todayData} city={city} />
       <Main todayData={todayData} futureData={futureData} />
     </div>
