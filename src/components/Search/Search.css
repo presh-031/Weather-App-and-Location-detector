@@ -51,13 +51,13 @@ button {
 }
 .search-history-section,
 .suggestions-section {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
   color: #e7e7eb;
   margin: 0 1.2rem;
 }
 .search-history-section div,
 .suggestions-section div {
-  /* outline: 1px solid blue; */
+  outline: 1px solid blue;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -90,5 +90,11 @@ button {
   .search-icon {
     /* outline: 1px solid red; */
     height: 2rem;
+  }
+  .search-history-section,
+  .suggestions-section {
+    outline: 1px solid red;
+    color: #e7e7eb;
+    margin: 0 4.6rem;
   }
 }
