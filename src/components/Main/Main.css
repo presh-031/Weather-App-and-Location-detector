@@ -4,25 +4,13 @@
 }
 .units-section {
   display: none;
-  outline: 1px solid red;
   margin-top: 4.2rem;
 }
 .forecasts-section {
-  outline: 10px solid green;
   padding: 5.2rem 0;
-  /* padding: 5.2rem 14%; */
-  /* padding: 5.2rem 0; */
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* justify-content: center; */
-  /* gap: 3.2rem 0; */
 }
 .forecasts-section > div {
   display: grid;
-  /* flex-wrap: wrap; */
-  outline: 1px solid red;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem 2.6rem;
   width: fit-content;
@@ -36,26 +24,20 @@
 .highlights-section {
   padding: 0 2.8rem;
   margin: 0;
-  outline: 1px solid red;
 }
 .today-text {
-  /* line-height: 2.818rem; */
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 3.2rem;
-  /* overflow: auto; */
-  /* border: 1px solid green; */
 }
 .highlights-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3.2rem 0;
-  /* outline: 1px solid red; */
 }
 footer {
   background-color: #100e1d;
   margin: 0;
-  /* outline: 1px solid red; */
   padding-top: 9.6rem;
   padding-bottom: 2.4rem;
   display: grid;
@@ -95,6 +77,5 @@ footer p a {
   .highlights-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 4.8rem;
-    /* outline: 1px solid red; */
   }
 }

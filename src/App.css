@@ -1,7 +1,6 @@
 @media (min-width: 800px) {
   .App {
     display: grid;
-    /* grid-template-columns: 45.9rem 98.1rem; */
     grid-template-columns: 31.875% 68.125%;
   }
 }

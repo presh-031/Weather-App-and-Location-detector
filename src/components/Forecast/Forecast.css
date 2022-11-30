@@ -1,5 +1,4 @@
 .forecast {
-  outline: 1px solid red;
   text-align: center;
   background-color: #1e213a;
   width: 12rem;
@@ -26,7 +25,6 @@
   margin-top: 1.8rem;
 }
 .forecast div {
-  /* outline: 1px solid red; */
   display: grid;
   place-items: center;
   margin-top: 1rem;
@@ -36,11 +34,8 @@
   width: 6.6rem;
   height: 6.2rem;
   object-fit: contain;
-  /* outline: 1px solid blue; */
 }
 .temps {
-  /* border: 1px solid green; */
-  /* margin-top: 3.1rem; */
   margin-bottom: 2rem;
   padding: 0;
   width: 100%;
@@ -54,5 +49,4 @@
 }
 .feels-like {
   color: #a09fb1;
-  /* margin-left: 1.6rem; */
 }
