@@ -38,7 +38,6 @@ const App = () => {
   }, []);
 
   async function getWeather(lat, lon) {
-    // console.log(lat, lon);
     try {
       const API_key = "e416be1f249467ff1237c0b4e24aedd7";
       const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_key}&units=metric`;
@@ -48,7 +47,7 @@ const App = () => {
 
       setTodayData(data[0]);
 
-      // Relatively random picks, really, and total 5 to fit the design by generating exactly 5 components.
+      // Relatively random picks, really(api) and total 5 to fit the design by generating exactly 5 components.
       setFutureData([data[8], data[16], data[22], data[29], data[35]]);
     } catch (err) {
       console.log(err);
@@ -70,8 +69,6 @@ const App = () => {
     }
   }
   function childToApp(lat, lon, name, state, country) {
-    // console.log(`${lat}, ${lon} in app`);
-
     getWeather(lat, lon);
 
     // The new city should show the exact same city from the suggestion.
@@ -89,6 +86,9 @@ const App = () => {
       <Main todayData={todayData} futureData={futureData} />
     </div>
   );
+  // Add popup if user location is off and app keeps loading
+  // Temp conversion
+  // Extreme responsiveness and at around 500px
 };
 
 export default App;

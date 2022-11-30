@@ -1,4 +1,5 @@
 <!-- Data from the todays highlights section may show duplicate days eith different info due to diffrernt times of reports. This is due to the free version of the api with suits the project, relatively. -->
+<!-- Started and finished the 80% of this app before i studied state management.-->
 
 # Getting Started with Create React App
 
