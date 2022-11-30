@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   .App {
     display: grid;
     /* grid-template-columns: 45.9rem 98.1rem; */

@@ -1,13 +1,23 @@
 .forecast {
-  /* border: 1px solid red; */
+  outline: 1px solid red;
   text-align: center;
   background-color: #1e213a;
-  /* width: 12rem; */
+  width: 12rem;
   padding: 0.5rem;
   padding-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .forecast {
+    width: 15rem;
+  }
+}
+@media (min-width: 900px) {
+  .forecast {
+    width: 12rem;
+  }
 }
 .date {
   font-weight: 500;

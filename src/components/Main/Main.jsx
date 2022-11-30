@@ -21,17 +21,19 @@ const Main = ({ todayData, futureData }) => {
           </section>
 
           <section className="forecasts-section">
-            {futureData.map((day) => {
-              const { dt_txt, main } = day;
-              const date = new Date(`${dt_txt}`).toDateString();
-              const maxTemp = Math.round(main.temp_max);
-              const minTemp = Math.round(main.temp_min);
-              const description = day?.weather[0].description;
+            <div>
+              {futureData.map((day) => {
+                const { dt_txt, main } = day;
+                const date = new Date(`${dt_txt}`).toDateString();
+                const maxTemp = Math.round(main.temp_max);
+                const minTemp = Math.round(main.temp_min);
+                const description = day?.weather[0].description;
 
-              return (
-                <Forecast key={day.dt} date={date} maxTemp={maxTemp} minTemp={minTemp} description={description} />
-              );
-            })}
+                return (
+                  <Forecast key={day.dt} date={date} maxTemp={maxTemp} minTemp={minTemp} description={description} />
+                );
+              })}
+            </div>
           </section>
 
           <section className="highlights-section">
