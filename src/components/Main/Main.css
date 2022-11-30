@@ -2,13 +2,15 @@
   background-color: #100e1d;
   color: #fff;
   /* height: 158.1rem; */
-  /* border: 8px solid red; */
+  border: 8px solid red;
 }
 .units-section {
   display: none;
+  outline: 1px solid red;
+  margin-top: 4.2rem;
 }
 .forecasts-section {
-  /* outline: 1px solid red; */
+  outline: 1px solid green;
   padding: 5.2rem 5.5rem;
   /* padding: 5.2rem 0; */
   display: grid;
@@ -19,13 +21,14 @@
 .highlights-section {
   padding: 0 2.8rem;
   margin: 0;
+  outline: 1px solid red;
 }
 .today-text {
   /* line-height: 2.818rem; */
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 3.2rem;
-  overflow: auto;
+  /* overflow: auto; */
   /* border: 1px solid green; */
 }
 .highlights-container {
@@ -37,7 +40,7 @@
 footer {
   background-color: #100e1d;
   margin: 0;
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
   padding-top: 9.6rem;
   padding-bottom: 2.4rem;
   display: grid;
@@ -53,4 +56,28 @@ footer p {
 footer p a {
   color: inherit;
   font-weight: 700;
+}
+@media (min-width: 1024px) {
+  .main {
+    padding: 0 12.3rem 0 15.4rem;
+  }
+  .units-section {
+    display: block;
+  }
+  .forecasts-section {
+    outline: 1px solid green;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.6rem;
+    margin: 6.6rem 0 7.2rem 0;
+  }
+  .highlights-section {
+    padding: 0;
+  }
+  .highlights-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.8rem;
+    /* outline: 1px solid red; */
+  }
 }

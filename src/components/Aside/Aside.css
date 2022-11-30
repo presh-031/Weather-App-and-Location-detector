@@ -131,6 +131,7 @@
   color: #88869d;
   margin-top: 3.3rem;
   padding-bottom: 10.5rem;
+  outline: 1px solid red;
 }
 .location-icon {
   width: 1.4rem;
@@ -150,6 +151,8 @@
   .Aside > div:nth-child(1) input {
   }
   .cloud-with-bg {
+    outline: 1px solid blue;
+    margin-top: 0;
   }
   .cloud-with-bg div img {
     outline: 1px solid red;
@@ -164,5 +167,8 @@
   }
   .weather-condition-div {
     margin-bottom: 8.7rem;
+  }
+  .location-div {
+    padding-bottom: 5.2rem;
   }
 }

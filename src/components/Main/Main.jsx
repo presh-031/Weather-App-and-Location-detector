@@ -16,8 +16,8 @@ const Main = ({ todayData, futureData }) => {
       {todayData ? (
         <>
           <section className="units-section">
-            <Units unit={"&deg;C"} />
-            <Units unit={"&deg;F"} />
+            <Units unit="&deg;C" />
+            <Units unit="&deg;F" />
           </section>
 
           <section className="forecasts-section">
