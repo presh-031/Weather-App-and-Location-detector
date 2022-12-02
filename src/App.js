@@ -22,9 +22,12 @@ const App = () => {
 
     const error = (error) => {
       console.log(error);
-      // if (error.GeolocationPositionError.code === 2) {
-      //   alert("Network error");
-      // }
+      if (error.code === 1) {
+        // no location access
+        // use a default city and weather (Indianapolis, Indiana, US.)
+        getWeather(39.7683331, -86.1583502);
+        getCity(39.7683331, -86.1583502);
+      }
     };
 
     navigator.geolocation.getCurrentPosition(success, error);
