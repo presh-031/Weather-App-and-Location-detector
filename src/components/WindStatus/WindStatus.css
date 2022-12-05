@@ -21,9 +21,21 @@
   line-height: 7.5rem;
   font-size: 6.4rem;
 }
-.wind-status p:nth-child(3) {
+.direction-container {
+  padding: 0;
+  margin-top: 3.1rem;
+}
+.direction-icon {
+  height: fit-content;
+  margin-right: 1rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255, 0.3);
+  display: inline-grid;
+  place-items: center;
+}
+.direction-description {
   font-weight: 500;
   line-height: 1.644rem;
-  font-size: 1.4rem;
-  margin-top: 3.1rem;
+  font-size: 1.2rem;
 }

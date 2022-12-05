@@ -49,11 +49,11 @@ const WindStatus = ({ windStatus }) => {
       <p>
         <span> {speedInMph} </span> mph
       </p>
-      <div className="weather-app__todays-highlights__wind-status__direction">
-        <span>
+      <div className="direction-container">
+        <span className="direction-icon">
           <FaLocationArrow style={{ transform: `rotate(${deg}deg)` }} />
         </span>
-        <span>{getDirection(deg)}</span>
+        <span className="direction-description">{getDirection(deg)}</span>
       </div>
     </div>
   );
