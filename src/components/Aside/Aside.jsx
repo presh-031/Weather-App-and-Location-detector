@@ -15,7 +15,7 @@ import "./Aside.css";
 
 const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
   const [showSearchArea, setShowSearchArea] = useState(false);
-  const [geoClicked, setGeoClicked] = useState(true);
+  // const [geoClicked, setGeoClicked] = useState(true);
 
   const date = todayData ? new Date(`${todayData.dt_txt}`).toDateString().split(" ") : [];
 
@@ -46,7 +46,7 @@ const Aside = ({ getGeoClick, childToApp, todayData, city }) => {
             <div
               className="geo"
               onClick={() => {
-                getGeoClick(geoClicked);
+                getGeoClick(true);
               }}
             >
               <IconContext.Provider value={{ className: "geo-icon" }}>
