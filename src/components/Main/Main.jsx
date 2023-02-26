@@ -15,10 +15,10 @@ const Main = ({ todayData, futureData }) => {
     <div className="main">
       {todayData ? (
         <>
-          <section className="units-section">
+          {/* <section className="units-section">
             <Units unit="&deg;C" />
             <Units unit="&deg;F" />
-          </section>
+          </section> */}
 
           <section className="forecasts-section">
             <div>
